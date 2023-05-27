@@ -1,0 +1,21 @@
+.header {
+    font-size: 25pt;
+    color: #505050;
+    font-family: sans-serif;
+}
+
+.header ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.body-right {
+    text-align: center;
+}
+.body-right > img {
+    width: 100%;
+}
+
+.body-left {
+    font-size: 50pt;
+}
