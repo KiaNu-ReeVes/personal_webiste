@@ -1,6 +1,9 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .header {
     font-size: 25pt;
-    color: #505050;
     font-family: sans-serif;
 }
 
@@ -18,4 +21,25 @@
 
 .body-left {
     font-size: 50pt;
+}
+
+.footer {
+    font-weight: bold;
+}
+
+#cwm {
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(255, 100, 100);
+    font-size: 25pt;
+}
+
+@media screen and (max-width: 540px) {
+    .header {
+        font-size: 15pt;
+    }
+    .body-left {
+        font-size: 25pt;
+    }
 }
