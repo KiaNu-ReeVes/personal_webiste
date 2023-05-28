@@ -26,7 +26,7 @@
             </div>
             <div class="col-12 col-md-3 text-center text-md-end">
                 <ul>
-                    <a href=""><li><i class="fa-brands fa-instagram"></i></li></a>
+                    <a href=""><li><i class="fa-brands fa-youtube"></i></li></a>
                     <a href=""><li><i class="fa-brands fa-discord"></i></li></a>
                     <li id="btnSwitch"><i class="fa-solid fa-moon"></i></li>
                 </ul>
@@ -36,11 +36,10 @@
             <div class="col-12 col-md-6 body-left">
                 <span style="font-size: 25pt;">Hello ___</span>
                 <br>
-                <span>I'm KiaN Rabiei</span>
+                <span>I'm <span id="writer"></span></span>
                 <br>
                 <p style="font-size: medium;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum in sapien non dignissim. Cras cursus vehicula enim, ac mollis sem tincidunt sit amet. Duis nec semper tellus, et fermentum magna. Etiam fermentum sem id elementum pretium. Vestibulum placerat diam ut elit dictum scelerisque. Etiam ut arcu sed tellus egestas suscipit sit amet consequat arcu. Suspendisse convallis vestibulum vulputate. Morbi velit dui, dignissim eget sem quis, dictum dignissim ligula. In efficitur nibh eu tortor accumsan interdum. Pellentesque suscipit enim ac rhoncus hendrerit.
-                </p>
+                    🌟 Welcome to my personal website! I'm Kian Rabiee, a 15-year-old programmer specializing in JavaScript. 💻 With four years of experience, I create computer, mobile, and web applications. 🚀 Join me on my coding journey as we explore new technologies and build innovative solutions. Feel free to browse my projects and reach out for inquiries or collaborations. Happy coding with Kian Rabiee! 🌈                </p>
                 <input id="cwm" type="button" value="Contact With Me">
             </div>
             <div class="col-12 col-md-6 body-right">
@@ -67,6 +66,45 @@
                 document.documentElement.setAttribute('data-bs-theme','dark')
             }
         })
+        var i = 0;
+        var i2 = 0;
+        var txts = [
+            'Developer',
+            'Designer'
+        ]; /* The text */
+        var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+        function typeWriter() {
+            if (i < txts[i2].length) {
+                document.getElementById("writer").innerHTML += txts[i2].charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                setTimeout(deleteText, speed * 20);
+            }
+        }
+
+        function deleteText() {
+            if (i > 0) {
+                var currentText = document.getElementById("writer").innerHTML;
+                document.getElementById("writer").innerHTML = currentText.slice(0, -1);
+                i--;
+                setTimeout(deleteText, speed);
+            } else {
+                i2++;
+                if (i2 >= txts.length) {
+                    i2 = 0;
+                }
+                setTimeout(typeWriter, speed);
+            }
+        }
+        const sds = true
+        if (sds == true) {
+            typeWriter()
+            sds = false
+        }
+        setTimeout(typeWriter, 2500);
+
     </script>
 </body>
 

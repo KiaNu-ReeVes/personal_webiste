@@ -1,3 +1,6 @@
+* {
+    user-select: none;
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -17,6 +20,9 @@ a {
 }
 .body-right > img {
     width: 100%;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 .body-left {
@@ -25,6 +31,9 @@ a {
 
 .footer {
     font-weight: bold;
+    animation-name: example2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 #cwm {
@@ -35,6 +44,10 @@ a {
     font-size: 25pt;
 }
 
+#btnSwitch {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 540px) {
     .header {
         font-size: 15pt;
@@ -43,3 +56,15 @@ a {
         font-size: 25pt;
     }
 }
+
+@keyframes example {
+    0%   {margin-top: 0px;}
+    50% {margin-top: -20px;}
+    100%   {margin-top: 0px;}
+  }
+@keyframes example2 {
+  0%   {margin-top: -20px;}
+  50% {margin-top: 0px;}
+  100%   {margin-top: -20px;}
+}
+  
