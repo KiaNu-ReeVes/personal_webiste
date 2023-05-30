@@ -32,6 +32,11 @@ a {
     display: inline;
     margin-right: 10px;
 }
+.header ul li:hover {
+    background: -webkit-linear-gradient(45deg, rgba(223,60,173,1) 0%, rgba(255,95,95,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .body-right {
     text-align: center;
@@ -57,7 +62,7 @@ a {
     justify-content: center;
     border-radius: 10px;
     border: 1px solid black;
-    box-shadow: 0 0 10px 1px black;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
 }
 
 .what-items > img {
