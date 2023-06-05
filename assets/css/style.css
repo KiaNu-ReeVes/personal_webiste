@@ -17,6 +17,35 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    rgba(223, 60, 173, 1) 0%,
+    rgba(255, 95, 95, 1) 100%
+  );
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 95, 95, 1) 0%,
+    rgba(223, 60, 173, 1) 100%
+  );
+}
+
 .header {
   font-size: 20pt;
   font-family: "Raleway";
@@ -53,7 +82,7 @@ a {
   font-size: 50pt;
 }
 
-#writer {
+.rgbtext {
   background: -webkit-linear-gradient(
     45deg,
     rgba(223, 60, 173, 1) 0%,
@@ -120,11 +149,11 @@ a {
   margin-bottom: 40px;
 }
 
-.info-list ul li {
+.info-list > ul > li {
   display: inline-block;
   vertical-align: top;
   width: 32%;
-  margin: 12px 0 0 0;
+  margin: 10px 0 0 0;
 }
 
 .ab_left {
@@ -134,7 +163,7 @@ a {
 
 .ab_left > .img {
   background-color: rgb(21, 146, 255);
-  height: 500px;
+  height: 600px;
   width: 400px;
   border-radius: 20px;
   left: 0;
@@ -148,6 +177,46 @@ a {
   margin: auto;
 }
 
+.skills {
+  width: 90%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.skills > ul {
+  list-style: none;
+  font-size: 0;
+}
+
+.skills > ul > li {
+  padding: 10px 0;
+}
+
+.skills > ul > li > .name {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.skills > ul > li > .progress {
+  height: 30px;
+}
+
+.skills > ul > li > .progress > .percentage {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 95, 95, 1) 0%,
+    rgba(223, 60, 173, 1) 100%
+  );
+  border-radius: 20px;
+}
+.skills ul li .progress .percentage .percent {
+  padding-left: 50%;
+  font-size: 16pt;
+  font-weight: 700;
+  color: #000;
+}
 @media screen and (max-width: 540px) {
   .header {
     font-size: 15pt;
