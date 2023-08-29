@@ -224,4 +224,8 @@ a {
   .body-left {
     font-size: 25pt;
   }
+  .ab_left > .img {
+    height: 350px;
+    width: 250px;
+  }
 }
