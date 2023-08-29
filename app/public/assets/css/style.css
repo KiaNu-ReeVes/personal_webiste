@@ -201,6 +201,7 @@ a {
 
 .skills > ul > li > .progress {
   height: 30px;
+  border-radius: 40px;
 }
 
 .skills > ul > li > .progress > .percentage {
@@ -209,7 +210,6 @@ a {
     rgba(255, 95, 95, 1) 0%,
     rgba(223, 60, 173, 1) 100%
   );
-  border-radius: 20px;
 }
 .skills ul li .progress .percentage .percent {
   padding-left: 50%;
