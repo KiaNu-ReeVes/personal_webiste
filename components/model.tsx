@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Canvas, useLoader, useFrame } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { AnimationMixer } from 'three';
 
 function Model() {
@@ -11,8 +11,8 @@ function Model() {
   const scale = 5; // You can adjust this value to scale the model appropriately
 
   // Animation mixer setup
-  const mixer = useRef();
-  useFrame((state, delta) => mixer.current && mixer.current.update(delta));
+  const mixer = useRef<AnimationMixer>();
+  useFrame((state, delta) => mixer.current!.update(delta)); // Use non-null assertion operator here
 
   if (gltf.animations.length && !mixer.current) {
     mixer.current = new AnimationMixer(gltf.scene);

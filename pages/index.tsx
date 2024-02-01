@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faYoutube, faDiscord } from "@fortawesome/free-brands-svg-icons";
@@ -119,6 +119,43 @@ function IndexPage() {
       percent: "30%",
     },
   ];
+
+  const typeWriter = useCallback(() => {
+    let i = 0;
+    let i2 = 0;
+    const txts = ["Developer", "Designer"]; /* The text */
+    const speed = 50; /* The speed/duration of the effect in milliseconds */
+
+    function typeWriterHelper() {
+      const writerElement = document.getElementById("writer");
+      if (i < txts[i2].length && writerElement) {
+        writerElement.innerHTML += txts[i2].charAt(i);
+        i++;
+        setTimeout(typeWriterHelper, speed);
+      } else {
+        setTimeout(deleteText, speed * 20);
+      }
+    }
+
+    function deleteText() {
+      const writerElement = document.getElementById("writer");
+      if (i > 0 && writerElement) {
+        const currentText = writerElement.innerHTML;
+        writerElement.innerHTML = currentText.slice(0, -1);
+        i--;
+        setTimeout(deleteText, speed);
+      } else {
+        i2++;
+        if (i2 >= txts.length) {
+          i2 = 0;
+        }
+        setTimeout(typeWriterHelper, speed);
+      }
+    }
+
+    typeWriterHelper();
+  }, []);
+
   useEffect(() => {
     const handleThemeSwitch = () => {
       const currentTheme =
@@ -146,38 +183,6 @@ function IndexPage() {
     };
   }, [sds, typeWriter]);
 
-  let i = 0;
-  let i2 = 0;
-  const txts = ["Developer", "Designer"]; /* The text */
-  const speed = 50; /* The speed/duration of the effect in milliseconds */
-
-  function typeWriter() {
-    const writerElement = document.getElementById("writer");
-    if (i < txts[i2].length && writerElement) {
-      writerElement.innerHTML += txts[i2].charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    } else {
-      setTimeout(deleteText, speed * 20);
-    }
-  }
-
-  function deleteText() {
-    const writerElement = document.getElementById("writer");
-    if (i > 0 && writerElement) {
-      const currentText = writerElement.innerHTML;
-      writerElement.innerHTML = currentText.slice(0, -1);
-      i--;
-      setTimeout(deleteText, speed);
-    } else {
-      i2++;
-      if (i2 >= txts.length) {
-        i2 = 0;
-      }
-      setTimeout(typeWriter, speed);
-    }
-  }
-
   return (
     <div className="d-flex">
       <div className="container">
@@ -189,7 +194,7 @@ function IndexPage() {
           <div className="col text-center">
             <ul>
               {NavList.map((item, index) => (
-                <a href={`#${item.name}`}>
+                <a key={index} href={`#${item.name}`}>
                   <li>{item.name}</li>
                 </a>
               ))}
@@ -242,7 +247,7 @@ function IndexPage() {
             What Can I Do ?
           </span>
           {whatItems.map((item, index) => (
-            <div className="col-12 col-sm-6 col-lg-3 pb-2">
+            <div key={index} className="col-12 col-sm-6 col-lg-3 pb-2">
               <div className="what-items p-2">
                 <Image
                   src={item.img.src}
@@ -306,7 +311,7 @@ function IndexPage() {
             <div className="info-list">
               <ul>
                 {infoList.map((item, index) => (
-                  <li>
+                  <li key={index}>
                     <strong>{item.name} </strong> {item.yourInfo}
                   </li>
                 ))}
@@ -325,7 +330,7 @@ function IndexPage() {
           <div className="col-12 skills percent content-box">
             <ul>
               {skillsList.map((item, index) => (
-                <li>
+                <li key={index}>
                   <div className="name">{item.name}</div>
                   <div className="progress">
                     <div
