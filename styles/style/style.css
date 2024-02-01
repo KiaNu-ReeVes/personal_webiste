@@ -217,6 +217,12 @@ a {
   font-weight: 700;
   color: #000;
 }
+.backround {
+  background-image: url("/assets/img/Untitled-2.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 @media screen and (max-width: 540px) {
   .header {
     font-size: 15pt;

@@ -107,6 +107,10 @@ function IndexPage() {
       percent: "40%",
     },
     {
+      name: "Threejs",
+      percent: "60%",
+    },
+    {
       name: "NodeJS",
       percent: "100%",
     },
@@ -173,7 +177,7 @@ function IndexPage() {
       setTimeout(typeWriter, speed);
     }
   }
-  
+
   return (
     <div className="d-flex">
       <div className="container">
@@ -223,7 +227,7 @@ function IndexPage() {
               coding with Kian Rabiei! 🌈
             </p>
           </div>
-          <div className="col-12 col-md-6 body-right" style={{height: 500}}>
+          <div className="col-12 col-md-6 body-right" style={{ height: 500 }}>
             <KiaNModel></KiaNModel>
             {/* <Image
               src="/assets/img/Untitled-1.png"

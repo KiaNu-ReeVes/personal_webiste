@@ -1,24 +1,36 @@
-import { createRoot } from "react-dom/client";
-import { Canvas, useLoader } from "react-three-fiber";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
+import React, { useRef } from "react";
+import { Canvas, useLoader, useFrame } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { AnimationMixer } from 'three';
 
 function Model() {
-    const gltf = useLoader(GLTFLoader, "/KiaN2/untitled.gltf");
-    
-    // Adjust the scale of the model
-    const scale = 7; // You can adjust this value to scale the model appropriately
-  
-    return (
-      <primitive
-        object={gltf.scene}
-        position={[0, -4, 0]}
-        rotation={[0.15, -Math.PI / 10, 0]}  // Adjust the Y-axis rotation for looking left
-        scale={[scale, scale, scale]}
-        castShadow
-      />
-    );
-}
+  const gltf = useLoader(GLTFLoader, "/FreeAnimatedMale/scene.gltf");
+  const modelRef = useRef();
 
+  // Adjust the scale of the model
+  const scale = 5; // You can adjust this value to scale the model appropriately
+
+  // Animation mixer setup
+  const mixer = useRef();
+  useFrame((state, delta) => mixer.current && mixer.current.update(delta));
+
+  if (gltf.animations.length && !mixer.current) {
+    mixer.current = new AnimationMixer(gltf.scene);
+    const action = mixer.current.clipAction(gltf.animations[0]);
+    action.play();
+  }
+
+  return (
+    <primitive
+      ref={modelRef}
+      object={gltf.scene}
+      position={[0, -6, 0]}
+      rotation={[0.15, -Math.PI / 14, 0]} // Adjust the Y-axis rotation for looking left
+      scale={[scale, scale, scale]}
+      castShadow
+    />
+  );
+}
 
 const Lights = () => {
   return (
@@ -31,7 +43,7 @@ const Lights = () => {
 
 const KiaNModel = () => {
   return (
-    <Canvas>
+    <Canvas className="backround">
       <Lights />
       <mesh>
         <Model />
@@ -39,4 +51,5 @@ const KiaNModel = () => {
     </Canvas>
   );
 };
+
 export default KiaNModel;

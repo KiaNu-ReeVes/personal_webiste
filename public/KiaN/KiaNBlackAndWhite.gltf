@@ -20,7 +20,8 @@
 				96,
 				102,
 				108,
-				119
+				119,
+				122
 			]
 		}
 	],
@@ -2004,6 +2005,32 @@
 				118
 			],
 			"name":"hair_003_u"
+		},
+		{
+			"mesh":5,
+			"name":"uppr_000_r.model",
+			"translation":[
+				0,
+				0,
+				-0.6399999856948853
+			]
+		},
+		{
+			"children":[
+				120
+			],
+			"name":"uppr_000_r.001"
+		},
+		{
+			"children":[
+				121
+			],
+			"name":"uppr_000_r",
+			"translation":[
+				0,
+				0,
+				0.6899999976158142
+			]
 		}
 	],
 	"materials":[
@@ -2071,6 +2098,20 @@
 				"baseColorTexture":{
 					"index":7
 				},
+				"metallicFactor":0,
+				"roughnessFactor":0.5
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Material.002",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0.3490278124809265,
+					0.21737205982208252,
+					0.15799790620803833,
+					1
+				],
 				"metallicFactor":0,
 				"roughnessFactor":0.5
 			}
@@ -2154,6 +2195,22 @@
 						"WEIGHTS_0":30
 					},
 					"indices":31
+				}
+			]
+		},
+		{
+			"name":"uppr_000_r.model_high",
+			"primitives":[
+				{
+					"attributes":{
+						"COLOR_0":33,
+						"POSITION":34,
+						"NORMAL":35,
+						"TEXCOORD_0":36,
+						"TEXCOORD_1":37
+					},
+					"indices":38,
+					"material":4
 				}
 			]
 		}
@@ -2339,7 +2396,7 @@
 			"name":"hair_003_u.001"
 		},
 		{
-			"inverseBindMatrices":33,
+			"inverseBindMatrices":39,
 			"joints":[
 				100,
 				99,
@@ -2349,7 +2406,7 @@
 			"name":"hair_001_u.001"
 		},
 		{
-			"inverseBindMatrices":33,
+			"inverseBindMatrices":39,
 			"joints":[
 				106,
 				105,
@@ -2614,6 +2671,53 @@
 		},
 		{
 			"bufferView":33,
+			"componentType":5123,
+			"count":2698,
+			"normalized":true,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":34,
+			"componentType":5126,
+			"count":2698,
+			"max":[
+				0.5926543474197388,
+				0.01592409610748291,
+				0.03486312925815582
+			],
+			"min":[
+				-0.5926543474197388,
+				-0.17726582288742065,
+				-0.08745265007019043
+			],
+			"type":"VEC3"
+		},
+		{
+			"bufferView":35,
+			"componentType":5126,
+			"count":2698,
+			"type":"VEC3"
+		},
+		{
+			"bufferView":36,
+			"componentType":5126,
+			"count":2698,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":37,
+			"componentType":5126,
+			"count":2698,
+			"type":"VEC2"
+		},
+		{
+			"bufferView":38,
+			"componentType":5123,
+			"count":13590,
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":39,
 			"componentType":5126,
 			"count":4,
 			"type":"MAT4"
@@ -2818,8 +2922,44 @@
 		},
 		{
 			"buffer":0,
+			"byteLength":21584,
+			"byteOffset":4931960,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":32376,
+			"byteOffset":4953544,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":32376,
+			"byteOffset":4985920,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":21584,
+			"byteOffset":5018296,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":21584,
+			"byteOffset":5039880,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":27180,
+			"byteOffset":5061464,
+			"target":34963
+		},
+		{
+			"buffer":0,
 			"byteLength":256,
-			"byteOffset":4931960
+			"byteOffset":5088644
 		}
 	],
 	"samplers":[
@@ -2830,7 +2970,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":4932216,
+			"byteLength":5088900,
 			"uri":"KiaNBlackAndWhite.bin"
 		}
 	]
