@@ -53,8 +53,7 @@ function IndexPage() {
     {
       name: "UI/UX Design",
       desc: `UI/UX Design focuses on creating visually appealing and
-      user-friendly interfaces for digital products, ensuring a
-      seamless and engaging user experience.`,
+      user-friendly interfaces for digital products, engaging user experience.`,
       img: {
         src: "/assets/img/icons/programming.png",
         alt: "phone call",
@@ -215,7 +214,7 @@ function IndexPage() {
             </ul>
           </div>
         </div>
-        <div id="home" className="row" style={{ marginTop: "2.5%" }}>
+        <div id="Home" className="row" style={{ marginTop: "2.5%" }}>
           <div className="col-12 col-md-6 body-left">
             <span style={{ fontSize: "25pt" }}>Hello</span> <br />
             <span>
@@ -263,7 +262,7 @@ function IndexPage() {
           ))}
         </div>
         <div
-          id="about"
+          id="About"
           className="row"
           style={{ marginTop: "5%", marginBottom: "2.5%" }}
         >
@@ -320,7 +319,7 @@ function IndexPage() {
           </div>
         </div>
         <div
-          id="skills"
+          id="Skills"
           className="row"
           style={{ marginTop: "5%", marginBottom: "2.5%" }}
         >
